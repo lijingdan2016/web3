@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		.wrap{
+			width:1200px;
+			height:397px;
+			position:relative;
+			border:5px solid #000;
+			margin:80px auto;
+			overflow:hidden;
+		}
+		.wrap a{
+			display:none;
+		}
+		.bottom{
+			width:1002px;
+			height:73px;
+			bottom:0;
+			left:99px;
+			position:absolute;
+			background:url(img/bg.png);
+		}
+		.bottom>span{
+			width:50px;
+			height:73px;
+			line-height:73px;
+			text-align: center;
+			cursor:pointer;
+			color:#fff;
+			font-size:25px;
+			float:left;
+		}
+		#next{
+			float:right;
+		}
+
+		#top{
+			width:1100px;
+			height:7px;
+			background:#2b4b7d;
+			margin:0px auto;
+		}
+		#top2{
+			width:1100px;
+			height:100px;
+			margin:10px auto;
+		}
+		#p1{
+			float:left;
+		}
+		#p2{
+			float:right;
+		}
+		.search{
+			width:200px;
+			height:30px;
+		}
+		.btn_search{
+			background:url(img/ss.png);
+			width:40px;
+			height:34px;
+		}
+		#fan{
+			float:right;
+			margin-left:-10px;
+		}
+		#ga{
+			width:1100px;
+			background-color: gray;
+			height:2px;
+			margin:0px auto;
+		}
+		#nav{
+		margin-top:-550px;
+		margin-left:250px;
+		list-style:none;
+		line-height:50px;
+		position:absolute;
+		}
+		#nav li ul li a:link,#nav li ul li a:visited{
+	    background:#2b4b7d;
+	    color:white;
+	    width:150px;
+	    text-indent:24%;
+	    font-weight:bold;
+	    display:block;
+	    text-decoration:none;
+		}
+		#nav .dd:link,#nav .dd:visited{
+	    color:black;
+		font-weight:bold;
+		display:block;
+	    width:110px;
+	    text-align:center;
+	    text-decoration:none;
+	    }
+		#nav a:hover{
+		color:white;
+		text-decoration:none;
+		font-weight:bold;
+		background:#2b4b7d;
+		}
+		#nav ul{list-style: none;}
+		#nav li{
+		float:left;
+		width: 110px;
+		}
+		#nav li:hover{
+	    color:white;
+		background:#2b4b7d;
+		}
+		
+		#nav li ul li a:hover{
+		background:blue;
+		color:white;
+		}
+		#nav li ul{
+		display:none;
+		}
+		#nav li.subMenuShow ul{
+		display:block;
+		}
+	</style>
+</head>
+<body>
+	<div id="top"></div>
+	<div id="top2">
+		<div id="p1">
+			<img src="img/hb.png" ait="">
+		</div>
+		<div id="p2">
+			<p style="font-size:10px;color:orange;line-height:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;旧版网页&nbsp;&nbsp;&nbsp;&nbsp;English Version</p>
+			<input name="keyword" type="text" class="search" value="搜索"/>
+			<div id="fan"><input name="keyword2" type="submit" class="btn_search" value=""/></div>
+		</div>
+	</div>
+	<div id="ga"></div>
+
+	<div class="wrap">
+		<a href='#' style="display:block"><img src="img/img1.jpg" alt=""></a>
+		<a href='#'><img src="img/img2.jpg" alt=""></a>
+		<a href='#'><img src="img/img3.jpg" alt=""></a>
+		<a href='#'><img src="img/img4.jpg" alt=""></a>
+		<a href='#'><img src="img/img5.jpg" alt=""></a>
+		<a href='#'><img src="img/img6.jpg" alt=""></a>
+		<a href='#'><img src="img/img7.jpg" alt=""></a>
+		<a href='#'><img src="img/img8.jpg" alt=""></a>
+		<div class="bottom">
+			<span id="prev"><</span>
+			<span id="next">></span>
+		</div>
+		
+			<img src="img/e.png" alt="">
+		
+	</div>
+
+	<div id="nav">
+		<li class="cc"><a class="dd"  href="#">首页</a>
+		</li>
+		<li class="cc"><a  class="dd" href="#">学校概况&nbsp;▽</a>
+			<ul class="u7">
+				<li><a href="#">学校简介</a></li>
+				<li><a href="#">学科专业</a></li>
+				<li><a href="#">治理架构</a></li>
+				<li><a href="#">历史沿革</a></li>
+				<li><a href="#">学校标志</a></li>
+				<li><a href="#">校园风光</a></li>
+				<li><a href="#">校园地图</a></li>
+			</ul>
+		</li>
+		<li class="cc"><a class="dd" href="#">机构设置&nbsp;▽</a>
+			<ul>
+				<li><a href="#">教学单位</a></li>
+				<li><a href="#">管理服务</a></li>
+				<li><a href="#">附属单位</a></li>
+				<li><a href="#">汇华学院</a></li>
+			</ul>
+		</li>
+		<li class="cc"><a class="dd" href="#">人才培养&nbsp;▽</a>
+			<ul>
+				<li><a href="#">师资队伍</a></li>
+				<li><a href="#">本科生教育</a></li>
+				<li><a href="#">研究生教育</a></li>
+				<li><a href="#">继续教育</a></li>
+				<li><a href="#">留学生教育</a></li>
+				<li><a href="#">中外合作办学</a></li>
+			</ul>
+		</li>
+		<li class="cc"><a class="dd" href="#">科学研究&nbsp;▽</a>
+			<ul>
+				<li><a href="#">科学研究平台</a></li>
+				<li><a href="#">自然科学与技术</a></li>
+				<li><a href="#">人文与社会科学</a></li>
+				<li><a href="#">合作交流</a></li>
+				<li><a href="#">学术期刊</a></li>
+			</ul>
+		</li>
+		<li class="cc"><a class="dd" href="#">招生就业&nbsp;▽</a>
+			<ul>
+				<li><a href="#">本科生招生</a></li>
+				<li><a href="#">研究生招生</a></li>
+				<li><a href="#">继续教育招生</a></li>
+				<li><a href="#">留学生招生</a></li>
+				<li><a href="#">就业服务</a></li>
+			</ul>
+		</li>
+		<li class="cc"><a class="dd" href="#">人才招聘</a>
+		</li>
+		<li class="cc"><a class="dd" href="#">公共服务&nbsp;▽</a>
+			<ul>
+				<li><a href="#">本科生服务</a></li>
+				<li><a href="#">研究生服务</a></li>
+				<li><a href="#">行政事务服务</a></li>
+				<li><a href="#">图书情报服务</a></li>
+				<li><a href="#">预决算公开</a></li>
+				<li><a href="#">生活服务</a></li>
+				<li><a href="#">网络服务</a></li>
+			</ul>
+		</li>
+		<li class="cc"><a class="dd" href="#">校友会</a>
+		</li>
+	</div>
+	
+	
+
+</body>
+<script>
+	var wrap=document.getElementsByClassName('wrap')[0];
+	var imgs=wrap.getElementsByTagName('a');
+	var prev=document.getElementById('prev')
+	var next=document.getElementById('next')
+	var i=0;
+	function imgTab(){
+		imgs[i%8].style.display='none';
+		i++
+		imgs[i%8].style.display='block';
+	}
+	var timer=setInterval(imgTab,1000)
+	wrap.onmouseover=function(){
+		clearInterval(timer)
+	}
+	wrap.onmouseout=function(){
+		timer=setInterval(imgTab
+		,1000)
+	}
+	prev.onclick=function(){
+		imgs[i%8].style.display='none';
+		i--;
+		if(i<0){
+			i=7;
+		}
+		imgs[i%8].style.display='block';
+	}
+	next.onclick=function(){
+		imgTab();
+	}
+	window.onload = function(){
+			var liNodes = document.getElementsByTagName("li");
+			for (var i=0; i<liNodes.length; i++)
+			{
+				liNodes[i].onmouseover = function(){
+					this.className = "subMenuShow";
+				}
+				liNodes[i].onmouseout = function(){
+					this.className = "";
+				}
+			}
+		}
+</script>
+</html>
