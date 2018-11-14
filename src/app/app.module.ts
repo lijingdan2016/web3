@@ -1,55 +1,61 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { TodolistComponent } from './components/todolist/todolist.component';
-import { ParentsComponent } from './component/parents/parents.component';
-import { ChildComponent } from './component/child/child.component';
-import {CommonService} from './services/common.service';
-import {Common2Service} from './services/common2.service';
-import {RouterModule,Router}  from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { TongbuComponent } from './components/tongbu/tongbu.component';
-import { CourseComponent } from './components/course/course.component';
-import { ShequComponent } from './components/shequ/shequ.component';
-import { AppRoutingModule } from './/app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
-import { TongbudetailComponent } from './components/tongbudetail/tongbudetail.component';
-import { APipe } from './a.pipe'
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { MyApp } from './app.component';
+
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { APage } from '../pages/a/a';
+import { BPage } from '../pages/b/b';
+import { ComponentsModule } from '../components/components.module';
+import { HttpClientModule }  from '@angular/common/http';
+import { AddPage } from '../pages/add/add';
+import { SousuoPage } from '../pages/sousuo/sousuo';
+import { LoginPage } from '../pages/login/login';
 @NgModule({
   declarations: [
-    AppComponent,
-    TodolistComponent,
-    ParentsComponent,
-    ChildComponent,
-    HeaderComponent,
-    HomeComponent,
-    TongbuComponent,
-    CourseComponent,
-    ShequComponent,
-    TongbudetailComponent,
-    APipe
+    MyApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage,
+    APage,
+    BPage,
+    AddPage,
+    SousuoPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    RouterModule.forRoot([
-  
-      {path:'home',component:HomeComponent},
-      {path:'tongbu/:courseId',component:TongbudetailComponent},
-      {path:'tongbu',component:TongbuComponent},
-      {path:'course',component:CourseComponent},
-      {path:'shequ',component:ShequComponent},
-      {path:'',redirectTo:'home',pathMatch:'full'},
-      {path:'**',component:ShequComponent},
-    ]),
+    ComponentsModule,
     HttpClientModule,
-    AppRoutingModule,
+    IonicModule.forRoot(MyApp,{
+      backButtonText: '',
+      tabsHideOnSubPages:true
+    })
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage,
+    APage,
+    BPage,
+    AddPage,
+    SousuoPage,
+    LoginPage
   ],
   providers: [
-  {provide:CommonService,useClass:Common2Service}
-],
-  bootstrap: [AppComponent]
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}

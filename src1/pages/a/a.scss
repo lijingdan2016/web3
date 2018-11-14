@@ -1,0 +1,29 @@
+page-a {
+    .goods3{
+        margin-top:0px;
+        padding:0;
+        img{
+            width:100%;
+        }
+        li{
+            margin-top:-3px;
+            list-style:none;
+            position:relative;
+            width:100%;
+            float:left;
+            div{
+                position:absolute;
+                width:70%;
+                left:65px;
+                top:50px;
+                bottom:90px;
+                color:#fff;
+                height:130px;
+                line-height:30px;
+                text-align:center;
+                background-color: rgba(0,0,0,0.5);
+                color: rgba(255,255,255,0.6);
+            }
+        }
+    }
+}

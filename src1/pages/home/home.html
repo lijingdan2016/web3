@@ -1,0 +1,300 @@
+<ion-header text-center no-border>
+  <ion-navbar color="yel">
+      <button ion-button icon-only menuToggle>
+         <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>桔家</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only>
+            <ion-icon name="search"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing..."></ion-refresher-content>
+      </ion-refresher>
+      <!-- 导航栏 -->
+     <!--  <ion-scroll scrollX="true">
+        <span>推荐</span>
+        <span>家居</span>
+        <span>餐厨</span>
+        <span>床上用品</span>
+      </ion-scroll> -->
+      <ul class="navList">
+        <li *ngFor="let item of arr;let idx =index;" (click)="isClick(idx)" class="first" [class.first]="isActive==idx">
+          {{arr[idx]}}
+        </li>
+      </ul>
+      <div [ngSwitch]="isActive">
+        <div *ngSwitchCase="0">
+          <!-- 轮播 -->
+            <ion-slides loop="true" autoplay="1000"  pager="true" class="sli">
+              <ion-slide>
+                <img src="assets/imgs/slide1.png" ait="">
+              </ion-slide>
+              <ion-slide>
+                <img src="assets/imgs/slide1.png" alt="">
+              </ion-slide>
+              <ion-slide>
+                <img src="assets/imgs/slide1.png" alt="">
+              </ion-slide>
+            </ion-slides>
+            <div class="subtitle">
+                <h3 text-center>热|门|推|荐</h3>
+                <p text-center>Orange household</p>
+            </div>
+            <!-- 商品列表没用grid，改用普通li了，大家看看怎么写 -->
+            <ul class="goods">
+              <li>
+                <img src="assets/imgs/img1.png" alt="">
+                <p>--北欧原木色--</p>
+                <span><ion-icon name="md-star-half"></ion-icon></span>
+              </li>
+              <li>
+                <img src="assets/imgs/img1.png" alt="">
+                <p>--北欧原木色--</p>
+                <span><ion-icon name="md-star-half"></ion-icon></span>
+              </li>
+              <li>
+                <img src="assets/imgs/img1.png" alt="">
+                <p>--北欧原木色--</p>
+                <span><ion-icon name="md-star-half"></ion-icon></span>
+              </li>
+              <li>
+                <img src="assets/imgs/img1.png" alt="">
+                <p>--北欧原木色--</p>
+                <span><ion-icon name="md-star-half"></ion-icon></span>
+              </li>
+              <li>
+                <img src="assets/imgs/img1.png" alt="">
+                <p>--北欧原木色--</p>
+                <span><ion-icon name="md-star-half"></ion-icon></span>
+              </li>
+              <li>
+                <img src="assets/imgs/img1.png" alt="">
+                <p>--北欧原木色--</p>
+                <span><ion-icon name="md-star-half"></ion-icon></span>
+              </li>
+            </ul>
+        </div>
+        <div *ngSwitchCase="1">
+          <!-- 轮播 -->
+            <ion-slides loop="true" autoplay="1000"  pager="true" class="sli">
+                <ion-slide>
+                  <img src="assets/imgs/slide2.png" ait="">
+                </ion-slide>
+                <ion-slide>
+                  <img src="assets/imgs/slide2.png" alt="">
+                </ion-slide>
+                <ion-slide>
+                  <img src="assets/imgs/slide2.png" alt="">
+                </ion-slide>
+              </ion-slides>
+          <!-- 3张图片区域 -->
+              <ion-grid>
+                  <ion-row>
+                    <ion-col col-4>
+                        <img src="assets/imgs/tu1.png" alt="">
+                    </ion-col>
+                    <ion-col col-4>
+                        <img src="assets/imgs/tu2.png" alt="">
+                    </ion-col>
+                    <ion-col col-4>
+                        <img src="assets/imgs/tu3.png" alt="">
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+          <!-- 热门推荐 -->
+              <div class="subtitle">
+                  <h3 text-center>桔|子|家|居</h3>
+                  <p text-center>RECMMENDATION</p>
+              </div>
+          <!-- 商品列表 -->
+              <ul class="goods">
+                  <li>
+                    <img src="assets/imgs/img2.png" alt="">
+                    <p>欧式全实木家居</p>
+                    <span><ion-icon name="md-star-half"></ion-icon></span>
+                  </li>
+                  <li>
+                    <img src="assets/imgs/img2.png" alt="">
+                    <p>欧式全实木家居</p>
+                    <span><ion-icon name="md-star-half"></ion-icon></span>
+                  </li>
+                  <li>
+                    <img src="assets/imgs/img2.png" alt="">
+                    <p>欧式全实木家居</p>
+                    <span><ion-icon name="md-star-half"></ion-icon></span>
+                  </li>
+                  <li>
+                    <img src="assets/imgs/img2.png" alt="">
+                    <p>欧式全实木家居</p>
+                    <span><ion-icon name="md-star-half"></ion-icon></span>
+                  </li>
+                  <li>
+                    <img src="assets/imgs/img2.png" alt="">
+                    <p>欧式全实木家居</p>
+                    <span><ion-icon name="md-star-half"></ion-icon></span>
+                  </li>
+                  <li>
+                    <img src="assets/imgs/img2.png" alt="">
+                    <p>欧式全实木家居</p>
+                    <span><ion-icon name="md-star-half"></ion-icon></span>
+                  </li>
+                </ul>
+        </div>
+        <div *ngSwitchCase="2">
+          这是餐厨页
+        </div>
+        <div *ngSwitchCase="3">
+          这是床上用品
+        </div>
+      </div>
+ <!--  css工具集--theme下
+  sass变量（全局）--variable.css
+  slides组件、属性、方法及事件
+  @ViewChild()
+  创建组件 ionic g component componentName
+  模板引用变量 标签上写#变量名
+  segment组件及ngSwitch
+  服务器代理 ionic.config.json 
+  -->
+<!-- 轮播 -->
+  <!-- <ion-slides loop="true" autoplay="1000"  pager="true" class="sli">
+    <ion-slide>
+      <img src="assets/imgs/slide1.png" ait="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide1.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide1.png" alt="">
+    </ion-slide>
+  </ion-slides>
+  <div class="subtitle">
+      <h3 text-center>热|门|推|荐</h3>
+      <p text-center>Orange household</p>
+  </div>
+  <!-- 商品列表没用grid，改用普通li了，大家看看怎么写 -->
+ <!--  <ul class="goods">
+    <li>
+      <img src="assets/imgs/img1.png" alt="">
+      <p>--北欧原木色--</p>
+      <span><ion-icon name="md-star-half"></ion-icon></span>
+    </li>
+    <li>
+      <img src="assets/imgs/img1.png" alt="">
+      <p>--北欧原木色--</p>
+      <span><ion-icon name="md-star-half"></ion-icon></span>
+    </li>
+    <li>
+      <img src="assets/imgs/img1.png" alt="">
+      <p>--北欧原木色--</p>
+      <span><ion-icon name="md-star-half"></ion-icon></span>
+    </li>
+    <li>
+      <img src="assets/imgs/img1.png" alt="">
+      <p>--北欧原木色--</p>
+      <span><ion-icon name="md-star-half"></ion-icon></span>
+    </li>
+    <li>
+      <img src="assets/imgs/img1.png" alt="">
+      <p>--北欧原木色--</p>
+      <span><ion-icon name="md-star-half"></ion-icon></span>
+    </li>
+    <li>
+      <img src="assets/imgs/img1.png" alt="">
+      <p>--北欧原木色--</p>
+      <span><ion-icon name="md-star-half"></ion-icon></span>
+    </li>
+  </ul> 
+
+
+
+  
+
+
+
+
+
+  <!-- <ion-segment [(ngModel)]="icons" color="secondary">
+      <ion-segment-button value="camera">
+        <ion-icon name="camera"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="bookmark">
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-segment-button>
+  </ion-segment>
+<div [ngSwitch]="icons">
+  <div *ngSwitchCase="'camera'">
+      这是camera
+  </div>
+  <div *ngSwitchCase="'bookmark'">
+      这是bookmark
+  </div>
+</div>
+<ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        1 of 2
+      </ion-col>
+      <ion-col col-6>
+        2 of 2
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        1 of 3
+      </ion-col>
+      <ion-col col-6>
+        2 of 3 (wider)
+      </ion-col>
+      <ion-col col-6>
+        3 of 3
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <c #ac></c>
+  <input type="text" #inp>
+  <button ion-button menuToggle>开关菜单</button>
+  <button ion-button block (click)="goSub()">跳转</button>
+ <ion-list>
+
+  <ion-item *ngFor="let item of items"  detail-push>
+      {{item}}
+  </ion-item>
+  <!-- <ion-item>Item</ion-item>
+  <ion-item>Item</ion-item>
+  <ion-item no-lines>Item</ion-item>
+  <ion-item>
+    <h2>Item</h2>
+    <p>Item Paragraph</p>
+    <ion-thumbnail item-end>
+      <img src="assets/imgs/logo.png">
+    </ion-thumbnail>
+  </ion-item>
+
+  <ion-item-sliding>
+    <ion-item>
+      Item
+    </ion-item>
+    <ion-item-options>
+      <button ion-button color="primary" (click)="archive()">Archive</button>
+    </ion-item-options>
+  </ion-item-sliding> -->
+
+<!-- /ion-list>
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+ 
+</ion-content>
+ 

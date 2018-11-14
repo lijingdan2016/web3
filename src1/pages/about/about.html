@@ -1,0 +1,93 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides (ionSlideDidChange)="change()" loop="true" autoplay="1000"  pager="true" class="sli">
+        <ion-slide>
+          <h1>Slide 1</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 2</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 3</h1>
+        </ion-slide>
+      </ion-slides>
+</ion-content> -->
+
+
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+    </ion-refresher>
+<!--  搜索框 -->
+  <div class="container">
+    <input (click)="goSub1()" type="search" placeholder="双12特惠好物超低价" />
+    <div class="search"></div>
+  </div>
+<!-- 第一张图片 -->
+  <div class="shang">
+    <img id="shang1"  src="../assets/imgs/shang1.png"/>
+  </div>
+<!-- 导航栏 -->
+  <ul class="navList">
+    <li *ngFor="let item of arr;let idx =index;" (click)="isClick(idx)" class="first" [class.first]="isActive==idx">
+      {{arr[idx]}}
+    </li>
+  </ul>
+  <div [ngSwitch]="isActive">
+    <div *ngSwitchCase="0">
+      <!-- 白色区域 -->
+      <div class="zo">
+          <p>——————沙发——————</p>
+          <div class="ling">
+            <img src="../assets/imgs/ling.png"/>
+          </div>
+      </div>
+      <!-- 图片区域 -->
+      <ul class="goods2">
+          <li>
+            <img src="../assets/imgs/shang2.png" alt="">
+          </li>
+          <li>
+            <img src="../assets/imgs/shang3.png" alt="">
+          </li>
+          <li>
+            <img src="../assets/imgs/shang4.png" alt="">
+            <div class="pp">
+                <p class="p1">罗德蒙简约值绒布艺沙发</p>
+                <p class="p2">RMB 6500</p>
+            </div>
+          </li>
+          <li>
+            <img src="../assets/imgs/shang5.png" alt="">
+          </li>
+      </ul>
+    </div>
+
+    <div *ngSwitchCase="1">
+      这是卧室页
+    </div>
+    <div *ngSwitchCase="2">
+      这是餐厅页
+    </div>
+    <div *ngSwitchCase="3">
+      这是书房页
+    </div>
+    <div *ngSwitchCase="4">
+      这是门厅页
+    </div>
+  </div>
+
+</ion-content>
